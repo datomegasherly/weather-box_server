@@ -1,0 +1,24 @@
+{
+  "name": "weather-box_server",
+  "version": "1.0.0",
+  "description": "Server side for weather box",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datomegasherly/weather-box_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/datomegasherly/weather-box_server/issues"
+  },
+  "homepage": "https://github.com/datomegasherly/weather-box_server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
