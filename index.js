@@ -2,18 +2,9 @@ const fs = require('fs');
 const cors = require('cors');
 const express = require('express');
 const EventEmitter = require('events');
-const https = require('https');
 const http = require('http');
 
 const app = express();
-
-let https_connection = false; // let be true if want to create server as https
-
-if(https_connection){
-	let privateKey = fs.readFileSync('server.key', 'utf8');
-	let certificate = fs.readFileSync('server.crt', 'utf8');
-	let credentials = {key: privateKey, cert: certificate};
-}
 
 app.use(cors());
 let eventEmitter = new EventEmitter();
@@ -54,14 +45,7 @@ app.get('/api/cities/:search', (req, res) => {
     });
 });
 
-if(https_connection){
-	let httpsServer = http.createServer(credentials, app);
-	httpServer.listen(8443, () => {
-		console.log('App render in HTTPS successfully and ready to execute');
-	});
-} else {
-	let httpServer = http.createServer(app);
-	httpServer.listen(8080, () => {
-		console.log('App render in HTTP successfully and ready to execute');
-	});
-}
+let httpServer = http.createServer(app);
+httpServer.listen(8080, () => {
+    console.log('App render in HTTP successfully and ready to execute');
+});
