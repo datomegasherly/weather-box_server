@@ -47,6 +47,6 @@ app.get(`${config.baseUrl}/api/cities/:search`, (req, res) => {
 });
 
 let httpServer = http.createServer(app);
-httpServer.listen(8080, () => {
-    console.log('App render in HTTP successfully and ready to execute');
+httpServer.listen(8000, () => {
+    console.log('server is listening on port 8000');
 });
